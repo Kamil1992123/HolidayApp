@@ -56,12 +56,7 @@
                 }
             </dd>
         *@
-        <dt>Uwierzytelnianie dwuetapowe:</dt>
-        <dd>
-            <p>
-                Nie skonfigurowano dostawców uwierzytelniania dwuskładnikowego. Zapoznaj się z <a href="https://go.microsoft.com/fwlink/?LinkId=403804">tym artykułem</a>,
-                aby uzyskać szczegółowe informacje dotyczące konfigurowania tej aplikacji ASP.NET do obsługi uwierzytelniania dwuskładnikowego.
-            </p>
+       
             @*@if (Model.TwoFactor)
                 {
                     using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))

@@ -28,6 +28,13 @@ namespace HolidayApp.Controllers
             return View();
         }
 
+        
+        public ActionResult AddWorker()
+        {
+            return View();
+        }
+
+
         [HttpPost]
         public ActionResult AddWorker(string Name, string Surname, string Department, int HolidaysLeft)
         {

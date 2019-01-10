@@ -1,13 +1,4 @@
-﻿
-<h1> Aplikacja urlopowa firmy ACME </h1>
-
-<p> Za pomocą tej aplikacji bardzo łatwo wypełnisz wniosek urlopowy a Twoi przełożeni w wygodny sposób zdecydują czy go zaakceptować.</p>
-<p> Zaloguj się lub zgłoś przełożonemu brak aktywnego konta.</p>
-
-
-
-
-@*@{
+﻿@{
     ViewBag.Title = "Home Page";
 }
 
@@ -40,7 +31,7 @@
 </div>
 
 <style>
-    #myTable tr th{
+    #myTable tr th {
         color: white;
         width: 300px;
         height: 40px;
@@ -62,7 +53,7 @@
 
         $.ajax({
             type: "POST",
-            url: "Home/AddWorker",
+            url: "/Home/AddWorker",
             data: JSON.stringify({ Name: name, Surname: surname, Department: department, HolidaysLeft: holidaysLeft }),
             contentType: "application/json",
 
@@ -82,4 +73,4 @@
         })
     }
 
-</script>*@
+</script>
