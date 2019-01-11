@@ -14,6 +14,8 @@ namespace HolidayApp.Models
     
     public partial class Aplications
     {
+
+        
         public int AplicationID { get; set; }
         public int WorkerID { get; set; }
         public System.DateTime HolidayStart { get; set; }

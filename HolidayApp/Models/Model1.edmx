@@ -4,53 +4,53 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="HolidayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="HolidayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
         <EntityType Name="Aplications">
           <Key>
             <PropertyRef Name="AplicationID" />
           </Key>
-          <Property Name="AplicationID" Type="int" Nullable="false" />
-          <Property Name="WorkerID" Type="int" Nullable="false" />
-          <Property Name="HolidayStart" Type="date" Nullable="false" />
-          <Property Name="HolidayStop" Type="date" Nullable="false" />
-          <Property Name="DayOffSum" Type="int" Nullable="false" />
-          <Property Name="DepartmentID" Type="int" Nullable="false" />
-          <Property Name="HolidayType" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="AplicationID" Nullable="false" Type="int" />
+          <Property Name="WorkerID" Nullable="false" Type="int" />
+          <Property Name="HolidayStart" Nullable="false" Type="date" />
+          <Property Name="HolidayStop" Nullable="false" Type="date" />
+          <Property Name="DayOffSum" Nullable="false" Type="int" />
+          <Property Name="DepartmentID" Nullable="false" Type="int" />
+          <Property Name="HolidayType" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="StatusID" Nullable="false" Type="int" />
         </EntityType>
         <EntityType Name="Departments">
           <Key>
             <PropertyRef Name="DepartmentID" />
           </Key>
-          <Property Name="DepartmentID" Type="int" Nullable="false" />
-          <Property Name="DepartmentName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DepartmentID" Nullable="false" Type="int" />
+          <Property Name="DepartmentName" Nullable="false" MaxLength="50" Type="varchar" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
             <PropertyRef Name="StatusID" />
           </Key>
-          <Property Name="StatusID" Type="int" Nullable="false" />
-          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StatusID" Nullable="false" Type="int" />
+          <Property Name="Status" Nullable="false" MaxLength="50" Type="varchar" />
         </EntityType>
         <EntityType Name="WorkerHolidayLeft">
           <Key>
             <PropertyRef Name="HolidayID" />
           </Key>
-          <Property Name="HolidayID" Type="int" Nullable="false" />
-          <Property Name="WorkerID" Type="int" Nullable="false" />
-          <Property Name="HolidayAvailable" Type="int" Nullable="false" />
+          <Property Name="HolidayID" Nullable="false" Type="int" />
+          <Property Name="WorkerID" Nullable="false" Type="int" />
+          <Property Name="HolidayAvailable" Nullable="false" Type="int" />
         </EntityType>
         <EntityType Name="Workers">
           <Key>
             <PropertyRef Name="WorkerID" />
           </Key>
-          <Property Name="WorkerID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Surname" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="DepartmentID" Type="int" Nullable="false" />
-          <Property Name="HolidayID" Type="int" Nullable="false" />
+          <Property Name="WorkerID" Nullable="false" Type="int" />
+          <Property Name="Name" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="Surname" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="Email" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="Password" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="DepartmentID" Nullable="false" Type="int" />
+          <Property Name="HolidayID" Nullable="false" Type="int" />
         </EntityType>
         <EntityContainer Name="HolidayModelStoreContainer">
           <EntitySet Name="Aplications" EntityType="Self.Aplications" Schema="dbo" store:Type="Tables" />
@@ -69,8 +69,8 @@
           </Key>
           <Property Name="AplicationID" Type="Int32" Nullable="false" />
           <Property Name="WorkerID" Type="Int32" Nullable="false" />
-          <Property Name="HolidayStart" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="HolidayStop" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="HolidayStart" Type="DateTime" Precision="0" Nullable="false" />
+          <Property Name="HolidayStop" Type="DateTime" Precision="0" Nullable="false" />
           <Property Name="DayOffSum" Type="Int32" Nullable="false" />
           <Property Name="DepartmentID" Type="Int32" Nullable="false" />
           <Property Name="HolidayType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -110,8 +110,8 @@
             <PropertyRef Name="WorkerID" />
           </Key>
           <Property Name="WorkerID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="Surname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DepartmentID" Type="Int32" Nullable="false" />
