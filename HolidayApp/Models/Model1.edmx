@@ -67,7 +67,7 @@
           <Key>
             <PropertyRef Name="AplicationID" />
           </Key>
-          <Property Name="AplicationID" Type="Int32" Nullable="false" />
+          <Property Name="AplicationID" Nullable="false" Type="Int32" />
           <Property Name="WorkerID" Type="Int32" Nullable="false" />
           <Property Name="HolidayStart" Type="DateTime" Precision="0" Nullable="false" />
           <Property Name="HolidayStop" Type="DateTime" Precision="0" Nullable="false" />

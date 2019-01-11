@@ -8,21 +8,20 @@ using System.Web;
 using System.Web.Mvc;
 using HolidayApp.Models;
 
-
 namespace HolidayApp.Controllers
 {
-    public class AplicationsController : Controller
+    public class WorkerAppController : Controller
     {
         private HolidayEntities1 db = new HolidayEntities1();
 
-        // GET: Aplications
+        // GET: WorkerApp
         public ActionResult Index()
         {
             var aplications = db.Aplications.Include(a => a.Workers).Include(a => a.Departments).Include(a => a.Status);
             return View(aplications.ToList());
         }
 
-        // GET: Aplications/Details/5
+        // GET: WorkerApp/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,7 +36,7 @@ namespace HolidayApp.Controllers
             return View(aplications);
         }
 
-        // GET: Aplications/Create
+        // GET: WorkerApp/Create
         public ActionResult Create()
         {
             ViewBag.WorkerID = new SelectList(db.Workers, "WorkerID", "Name");
@@ -46,7 +45,7 @@ namespace HolidayApp.Controllers
             return View();
         }
 
-        // POST: Aplications/Create
+        // POST: WorkerApp/Create
         // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -63,11 +62,10 @@ namespace HolidayApp.Controllers
             ViewBag.WorkerID = new SelectList(db.Workers, "WorkerID", "Name", aplications.WorkerID);
             ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName", aplications.DepartmentID);
             ViewBag.StatusID = new SelectList(db.Status, "StatusID", "Status1", aplications.StatusID);
-
             return View(aplications);
         }
 
-        // GET: Aplications/Edit/5
+        // GET: WorkerApp/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,7 +83,7 @@ namespace HolidayApp.Controllers
             return View(aplications);
         }
 
-        // POST: Aplications/Edit/5
+        // POST: WorkerApp/Edit/5
         // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -104,7 +102,7 @@ namespace HolidayApp.Controllers
             return View(aplications);
         }
 
-        // GET: Aplications/Delete/5
+        // GET: WorkerApp/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -119,7 +117,7 @@ namespace HolidayApp.Controllers
             return View(aplications);
         }
 
-        // POST: Aplications/Delete/5
+        // POST: WorkerApp/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

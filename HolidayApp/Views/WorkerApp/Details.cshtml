@@ -1,0 +1,74 @@
+﻿@model HolidayApp.Models.Aplications
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Aplications</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HolidayStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HolidayStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HolidayStop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HolidayStop)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DayOffSum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DayOffSum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HolidayType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HolidayType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Workers.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Workers.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departments.DepartmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departments.DepartmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.Status1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.Status1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AplicationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
