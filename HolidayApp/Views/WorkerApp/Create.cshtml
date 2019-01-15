@@ -1,16 +1,11 @@
 ﻿@model HolidayApp.Models.Aplications
 
 
-@{
-    ViewBag.Title = "Worker";
-}
-
 <br />
 <h2>Witaj </h2>
-<br />
 <h3>Pozostalo Ci X urlopu do wykorzystania. </h3>
 <br />
-<p> Czy chcesz złożyć wniosek?</p>
+<h3> Czy chcesz złożyć wniosek?</h3>
 
 @*<div class="alert alert-primary" role="alert">
         This is a primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
@@ -112,7 +107,7 @@
 
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" value="Create" class="btn btn-default" />
+                                <input type="submit" value="Dodaj do listy" class="btn btn-dark" />
                             </div>
                         </div>
                     </div>
@@ -121,8 +116,8 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-secondary" id="btnSave">Dodaj</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Zamknij</button>
+                <button type="button" class="btn btn-dark" id="btnSave">Dodaj dynamicznie</button>
             </div>
         </div>
     </div>
@@ -131,6 +126,7 @@
 
 
 <div>
+    <br />
     <table id="tblApp" class="table table-bordered table-striped table-responsive table-hover">
         <thead>
             <tr>
@@ -229,5 +225,5 @@
 
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Lista wniosków", "Index")
 </div>

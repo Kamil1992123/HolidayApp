@@ -1,13 +1,11 @@
 ﻿@model HolidayApp.Models.Aplications
 
-@{
-    ViewBag.Title = "Details";
-}
 
-<h2>Details</h2>
+
+<h2>Szczegóły</h2>
 
 <div>
-    <h4>Aplications</h4>
+    <h4>Wniosek:</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -69,6 +67,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.AplicationID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.AplicationID }) |
+    @Html.ActionLink("Wróć do listy", "Index")
 </p>

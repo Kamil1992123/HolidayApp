@@ -1,13 +1,9 @@
 ﻿@model IEnumerable<HolidayApp.Models.Aplications>
 
-@{
-    ViewBag.Title = "Index";
-}
 
-<h2>Index</h2>
-
+<br />
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Dodaj", "Create")
 </p>
 <table class="table">
     <tr>
@@ -59,9 +55,9 @@
             @Html.DisplayFor(modelItem => item.Status.Status1)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AplicationID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AplicationID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AplicationID })
+            @Html.ActionLink("Edytuj", "Edit", new { id=item.AplicationID }) |
+            @Html.ActionLink("Szczegóły", "Details", new { id=item.AplicationID }) |
+            @Html.ActionLink("Usuń", "Delete", new { id=item.AplicationID })
         </td>
     </tr>
 }

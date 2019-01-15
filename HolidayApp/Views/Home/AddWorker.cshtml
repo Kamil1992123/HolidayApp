@@ -1,9 +1,7 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿
 
 @model HolidayApp.Models.WorkerModel
-
+<br />
 <div class="row">
     <div class="col-md-8 col-lg-offset-4">
         <h2>Dodaj pracownika:</h2>
@@ -12,10 +10,10 @@
         <span>Nazwisko:</span>@Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })<br />
         <span>Dział:</span>@Html.TextBoxFor(x => x.Department, new { @class = "form-control" })<br />
         <span>Dni urlopu:</span> @Html.TextBoxFor(x => x.HolidaysLeft, new { @class = "form-control" })<br />
-        <p><a class="btn btn-light" onclick='SaveWorker()'>Dodaj</a></p><br /><br /><br />
+        <input type="submit" value="Dodaj" onclick='SaveWorker()' class="btn btn-dark" />
     </div>
 </div>
-
+<br />
 <div class="row">
     <div class="col-md-8 col-lg-offset-3">
         <h2>Lista pracowników:</h2><br />
@@ -29,11 +27,6 @@
         </table>
     </div>
 </div>
-
-
-
-
-
 
 
 <style>
