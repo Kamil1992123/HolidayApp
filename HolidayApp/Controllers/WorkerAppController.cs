@@ -65,6 +65,60 @@ namespace HolidayApp.Controllers
             return View(aplications);
         }
 
+
+
+
+        public JsonResult getApp(string id)
+        {
+            List<Aplications> app = new List<Aplications>();
+            app = db.Aplications.ToList();
+            return Json(app, JsonRequestBehavior.AllowGet);
+        }
+
+
+        [HttpPost]
+        public ActionResult AddApp(Aplications app)
+        {
+
+
+            //var app = new Aplications();
+
+            //if (ModelState.IsValid)
+            //{
+
+                db.Aplications.Add(app);
+                db.SaveChanges();
+                string message = "SUCCESS";
+                return Json(new { Message = message, JsonRequestBehavior.AllowGet });
+            //}
+
+
+
+
+           
+
+            //app.WorkerID = WorkerID;
+            //app.DepartmentID = Department;
+            //app.HolidayStart = HolidayStart;
+            //app.HolidayStop = HolidayStop;
+            //app.HolidayType = HolidayType;
+            //app.DayOffSum = DayOffSum;
+            //app.StatusID = Status;
+
+
+
+            //ViewBag.WorkerID = new SelectList(db.Workers, "WorkerID", "Name", aplications.WorkerID);
+            //ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName", aplications.DepartmentID);
+            //ViewBag.StatusID = new SelectList(db.Status, "StatusID", "Status1", aplications.StatusID);
+            //return Json(app, JsonRequestBehavior.AllowGet);
+
+
+        }
+
+
+
+
+
         // GET: WorkerApp/Edit/5
         public ActionResult Edit(int? id)
         {

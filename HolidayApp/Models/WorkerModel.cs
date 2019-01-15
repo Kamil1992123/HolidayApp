@@ -7,7 +7,7 @@ namespace HolidayApp.Models
 {
     public class WorkerModel
     {
-
+        
         public int WorkerId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }

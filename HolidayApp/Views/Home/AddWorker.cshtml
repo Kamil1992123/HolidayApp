@@ -10,9 +10,9 @@
         <br />
         <span>Imię:</span> @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })<br />
         <span>Nazwisko:</span>@Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })<br />
-        <span>Komórka organizacyjna:</span>@Html.TextBoxFor(x => x.Department, new { @class = "form-control" })<br />
+        <span>Dział:</span>@Html.TextBoxFor(x => x.Department, new { @class = "form-control" })<br />
         <span>Dni urlopu:</span> @Html.TextBoxFor(x => x.HolidaysLeft, new { @class = "form-control" })<br />
-        <p><a class="btn btn-dark" onclick='SaveWorker()'>Dodaj</a></p><br /><br /><br />
+        <p><a class="btn btn-light" onclick='SaveWorker()'>Dodaj</a></p><br /><br /><br />
     </div>
 </div>
 
@@ -23,12 +23,18 @@
             <tr>
                 <th>Imię</th>
                 <th>Nazwisko</th>
-                <th>Komórka organizacyjna</th>
+                <th>Dział</th>
                 <th>Dni urlopu</th>
             </tr>
         </table>
     </div>
 </div>
+
+
+
+
+
+
 
 <style>
     #myTable tr th {

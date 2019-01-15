@@ -1,12 +1,16 @@
 ﻿@model HolidayApp.Models.Aplications
 
+
 @{
     ViewBag.Title = "Worker";
 }
 
+<br />
 <h2>Witaj </h2>
-<h3>Pozostalo Ci X urlopu do wykorzystania </h3>
-<p> Czy chcesz zlozyc wnisek?</p>
+<br />
+<h3>Pozostalo Ci X urlopu do wykorzystania. </h3>
+<br />
+<p> Czy chcesz złożyć wniosek?</p>
 
 @*<div class="alert alert-primary" role="alert">
         This is a primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
@@ -18,12 +22,13 @@
     Dodaj wniosek
 </button>
 
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Podaj dane:</h5>
+                <h4 class="modal-title" id="exampleModalLabel">Wniosek urlopowy:</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -36,11 +41,11 @@
                     @Html.AntiForgeryToken()
 
                     <div class="form-horizontal">
-                        <h4>Aplications</h4>
+                        <h5>Podaj dane:</h5>
                         <hr />
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="form-group">
-                            @Html.LabelFor(model => model.AplicationID, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.LabelFor(model => model.AplicationID, "Id", htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
                                 @Html.EditorFor(model => model.AplicationID, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.AplicationID, "", new { @class = "text-danger" })
@@ -48,60 +53,62 @@
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.WorkerID, "WorkerID", htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.DropDownList("WorkerID", null, htmlAttributes: new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.WorkerID, "", new { @class = "text-danger" })
+                                @Html.LabelFor(model => model.WorkerID, "Imię", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("WorkerID", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.WorkerID, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                        </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.HolidayStart, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.HolidayStart, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.HolidayStart, "", new { @class = "text-danger" })
+                                @Html.LabelFor(model => model.HolidayStart, "Rozpoczęcie urlopu", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.HolidayStart, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.HolidayStart, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                        </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.HolidayStop,"Zakończenie urlopu", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.HolidayStop, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.HolidayStop, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.HolidayStop, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.HolidayStop, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.HolidayStop, "", new { @class = "text-danger" })
+                                @Html.LabelFor(model => model.DayOffSum,"Suma dni wolnych", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.DayOffSum, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DayOffSum, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                        </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.DayOffSum, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.DayOffSum, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.DayOffSum, "", new { @class = "text-danger" })
+                                @Html.LabelFor(model => model.DepartmentID, "Dział", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("DepartmentID", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.DepartmentID, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.DepartmentID, "DepartmentID", htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.DropDownList("DepartmentID", null, htmlAttributes: new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.DepartmentID, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.HolidayType,"Rodzaj urlopu", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.HolidayType, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.HolidayType, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.HolidayType, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.HolidayType, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.HolidayType, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.StatusID, "Status", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("StatusID", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.StatusID, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.StatusID, "StatusID", htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.DropDownList("StatusID", null, htmlAttributes: new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.StatusID, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
+
 
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
@@ -115,11 +122,111 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" id="btnSave">Dodaj</button>
             </div>
         </div>
     </div>
 </div>
+
+
+
+<div>
+    <table id="tblApp" class="table table-bordered table-striped table-responsive table-hover">
+        <thead>
+            <tr>
+                <th align="center" class="productth">Imię</th>
+                <th align="center" class="productth">Rozpoczęcie urlopu</th>
+                <th align="center" class="productth">Zakończenie urlopu</th>
+                <th align="center" class="productth">Ilość dni</th>
+                <th align="center" class="productth">Dział</th>
+                <th align="center" class="productth">Rodzaj urlopu</th>
+                <th align="center" class="productth">Status</th>
+
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+<style>
+    #tblApp tr th {
+        color: white;
+        width: 400px;
+        height: 50px;
+        text-decoration: solid;
+        background-color: #e10613;
+        padding: 15px;
+    }
+</style>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            LoadData();
+            $("#btnSave").click(function () {
+                var app = {};
+                app.AplicationID = $("#AplicationID").val();
+                app.WorkerID = $("#WorkerID").val();
+                app.HolidayStart = $("#HolidayStart").val();
+                app.HolidayStop = $("#HolidayStop").val();
+                app.DayOffSum = $("#DayOffSum").val();
+                app.DepartmentID = $("#DepartmentID").val();
+                app.HolidayType = $("#HolidayType").val();
+                app.StatusID = $("#StatusID").val();
+                $ajax({
+                    type: "POST",
+                    url: '@Url.Action("AddApp")',
+                    data: '{app: ' + JSON.stringify(app) + '}',
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",            
+                    success: function () {
+                        LoadData();
+                    },
+                    error: function () {
+                        alert("Error while inserting data");
+                    }
+                });
+                return false;
+            });
+          )};
+
+        function LoadData() {
+            $("#tblApp tbody tr").remove();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("getApp")',
+                dataType: 'json',
+                data: { id: '' },
+                success: function (data) {
+                    var items = '';
+                    $.each(data, function (i, item) {
+                        var rows = "<tr>"
+                            + "<td class='prtoducttd'>" + item.aplicationID + "</td>"
+                            + "<td class='prtoducttd'>" + item.workerID + "</td>"
+                            + "<td class='prtoducttd'>" + item.holidayStart + "</td>"
+                            + "<td class='prtoducttd'>" + item.holidayStop + "</td>"
+                            + "<td class='prtoducttd'>" + item.dayOffSum + "</td>"
+                            + "<td class='prtoducttd'>" + item.departmentID + "</td>"
+                            + "<td class='prtoducttd'>" + item.holidayType + "</td>"
+                            + "<td class='prtoducttd'>" + item.statusID + "</td>"
+                            + "</tr>";
+                        $('#tblApp tbody').append(rows);
+                    });
+                },
+                error: function (ex) {
+                    var r = jQuery.parseJSON(response.responseText);
+                    alert("Message: " + r.Message);
+                    alert("StackTrace: " + r.StackTrace);
+                    alert("ExceptionType: " + r.ExceptionType);
+                }
+            });
+            return false;
+        }
+    </script>
+}
+
 
 <div>
     @Html.ActionLink("Back to List", "Index")
